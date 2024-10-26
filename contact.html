@@ -11,75 +11,101 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background: linear-gradient(to right, #6a11cb, #2575fc);
             color: #ffffff;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
         h1 {
             color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin: 20px 0;
+            margin: 15px 0;
+            font-size: 1.8em;
+            text-align: center;
         }
 
         .contact-form {
             background-color: rgba(255, 255, 255, 0.2);
-            padding: 50px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: 90%;
-            max-width: 400px;
-            margin-bottom: 20px;
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
         }
 
         input[type="text"], input[type="email"], textarea {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 8px;
+            padding: 6px 0;
+            margin: 8px 0;
+            border-radius: 6px;
             border: 1px solid #ddd;
             outline: none;
             background-color: #ffffff;
             color: #333;
             transition: border-color 0.3s;
+            font-size: 0.9em;
         }
 
         input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
             border-color: #6a11cb;
         }
 
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
         button {
             padding: 10px;
-            font-size: 1em;
+            font-size: 0.9em;
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             background-color: #5859d6;
             color: white;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            margin: 5px;
+            margin: 5px 0;
+            width: 100%;
         }
 
         button:hover {
             background-color: #ff4f4f;
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         #contact-info {
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: center;
             color: #fffa;
             font-weight: bold;
+            font-size: 0.9em;
+            word-break: break-word;
         }
 
         .back-button {
-            margin-top: 20px;
+            margin-top: 15px;
             background-color: #6a11cb;
         }
 
         .back-button:hover {
             background-color: #5a0abf;
+        }
+
+        @media (min-width: 768px) {
+            .contact-form {
+                padding: 30px;
+            }
+
+            button {
+                width: auto;
+                padding: 8px 15px;
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -120,9 +146,10 @@
         }
 
         function goBack() {
-            window.history.back();
+            window.location.href = 'index.html'; // توجيه المستخدم إلى index.html
         }
     </script>
 
 </body>
 </html>
+
