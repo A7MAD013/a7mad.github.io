@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            background-color: #ffffff;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+            border-color: #6a11cb;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            background-color: #5859d6;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #ff4f4f;
+            transform: scale(1.05);
+        }
+
+        #contact-info {
+            margin-top: 20px;
+            text-align: center;
+            color: #fffa;
+            font-weight: bold;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            background-color: #6a11cb;
+        }
+
+        .back-button:hover {
+            background-color: #5a0abf;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>تواصل معنا</h1>
+    <div class="contact-form">
+        <input type="text" id="name" placeholder="اسمك" required>
+        <input type="email" id="email" placeholder="بريدك الإلكتروني" required>
+        <textarea id="message" placeholder="رسالتك" rows="5" required></textarea>
+        <button onclick="submitForm()">إرسال</button>
+    </div>
+
+    <div id="contact-info" class="hidden"></div>
+    
+    <button class="back-button" onclick="goBack()">العودة للخلف</button>
+
+    <script>
+        function submitForm() {
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("يرجى ملء جميع الحقول.");
+                return;
+            }
+
+            document.getElementById("contact-info").innerHTML = `
+                <p>شكراً لتواصلك معنا، ${name}!</p>
+                <p>سنقوم بالرد على بريدك الإلكتروني: ${email} قريباً.</p>
+            `;
+            document.getElementById("contact-info").classList.remove("hidden");
+
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>

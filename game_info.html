@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معلومات اللعبة</title>
+    <style>
+        /* التنسيق العام والخلفية */
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        /* تنسيق العناوين */
+        h1 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        /* تنسيق محتوى المعلومات */
+        .info-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            text-align: right; /* محاذاة النص إلى اليمين */
+        }
+
+        /* تنسيق الأزرار */
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #6a6ded;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #5859d6;
+            transform: scale(1.05);
+        }
+
+        /* تحسينات جمالية */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>معلومات اللعبة</h1>
+    <div class="info-container">
+        <p>هذه اللعبة هي لعبة تقليدية مشهورة تُعرف أيضًا بلعبة "إكس و أو". الهدف من اللعبة هو تكوين ثلاثة من رموزك (X أو O) في صف واحد.</p>
+        <p>يمكنك اللعب ضد صديق أو ضد الذكاء الاصطناعي.</p>
+        <p>استمتع باللعبة وحاول الفوز!</p>
+    </div>
+    <button onclick="goBack()">العودة إلى الصفحة الرئيسية</button>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
